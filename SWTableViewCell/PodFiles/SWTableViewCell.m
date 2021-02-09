@@ -91,6 +91,7 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     // Add the cell scroll view to the cell
     UIView *contentViewParent = self;
     UIView *clipViewParent = self.cellScrollView;
+    [self.contentView superview];
     if (![NSStringFromClass([[self.subviews objectAtIndex:0] class]) isEqualToString:kTableViewCellContentView])
     {
         // iOS 7
