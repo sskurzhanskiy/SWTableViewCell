@@ -92,12 +92,6 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     UIView *contentViewParent = self;
     UIView *clipViewParent = self.cellScrollView;
     [self.contentView superview];
-    if (![NSStringFromClass([[self.subviews objectAtIndex:0] class]) isEqualToString:kTableViewCellContentView])
-    {
-        // iOS 7
-        contentViewParent = [self.subviews objectAtIndex:0];
-        clipViewParent = self;
-    }
     NSArray *cellSubviews = [contentViewParent subviews];
     [self insertSubview:self.cellScrollView atIndex:0];
     for (UIView *subview in cellSubviews)
